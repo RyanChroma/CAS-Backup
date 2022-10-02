@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ad66ec96ffca824b80913861f0842d4, type: 2}
+  - {fileID: 2100000, guid: 4479331d0218e5f4c838711a34358607, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -345,7 +345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9eddfe4ee433b7418d90782ff54c62f, type: 2}
+  - {fileID: 2100000, guid: 33cfdb7326dada34fbdc63212d7bcb8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8040616572594235643}
   m_Layer: 0
-  m_Name: House temp folder
+  m_Name: House 1 folder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
