@@ -9,6 +9,7 @@ public class PlanePilot : MonoBehaviour
 	//public Camera freeCamera;
 	public GameObject stukaBody;
 	public float turnWithoutTilt = 0.0f; //FOR Q AND E MOVEMENT
+	public float planeTurnSpeed = 0.0f;
 
 	void Start()
 	{
@@ -51,8 +52,8 @@ public class PlanePilot : MonoBehaviour
 			speed = 300.0f;
 		}*/
 
-        //PLANE MOVEMENT
-        transform.Rotate(Input.GetAxis("Vertical"), 0.0f, -Input.GetAxis("Horizontal"));
+        //PLANE TURNING
+        transform.Rotate(Input.GetAxis("Vertical") * Time.deltaTime * planeTurnSpeed, 0.0f, -Input.GetAxis("Horizontal") * Time.deltaTime * planeTurnSpeed);
 
 		if(Input.GetKey(KeyCode.Q))
 		{
