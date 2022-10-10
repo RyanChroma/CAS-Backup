@@ -28,7 +28,7 @@ public class PlanePilot : MonoBehaviour
 		speed -= transform.forward.y * Time.deltaTime * 50.0f;
 
 		//SMARTER WAY OF SETTING MIN AND MAX SPEED
-		speed = Mathf.Clamp(speed, 50, 300);
+		speed = Mathf.Clamp(speed, 50, 150);
 
 		//INCREASE/DECREASE PLANE SPEED
 		if (Input.GetKey(KeyCode.LeftShift))

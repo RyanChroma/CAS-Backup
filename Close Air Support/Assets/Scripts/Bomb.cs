@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public float bombDestroyTimer = 0.0f;
     public BoxCollider bombCollider;
-    public Transform bombExplosionEffect;
+    public GameObject bombExplosionEffect;
 
     public void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Bomb hit");
+        Instantiate(bombExplosionEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
