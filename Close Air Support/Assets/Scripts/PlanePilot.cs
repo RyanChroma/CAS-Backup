@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlanePilot : MonoBehaviour
 {
-	public float speed = 90.0f;
+	public float speed = 50.0f;
 	public Camera moveCamTo;
 	//public Camera freeCamera;
 	public GameObject stukaBody;
@@ -28,7 +28,7 @@ public class PlanePilot : MonoBehaviour
 		speed -= transform.forward.y * Time.deltaTime * 50.0f;
 
 		//SMARTER WAY OF SETTING MIN AND MAX SPEED
-		speed = Mathf.Clamp(speed, 50, 150);
+		speed = Mathf.Clamp(speed, 50, 100);
 
 		//INCREASE/DECREASE PLANE SPEED
 		if (Input.GetKey(KeyCode.LeftShift))

@@ -16,7 +16,7 @@ public class PlaneGun : MonoBehaviour
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
 
     //BOOLS
     bool shooting, readyToShoot, reloading;
@@ -158,7 +158,14 @@ public class PlaneGun : MonoBehaviour
 
     public void Reload()
 	{
+        StartCoroutine(ReloadWithCooldown());
+	}
+
+    public IEnumerator ReloadWithCooldown()
+    {
+        reloading = true;
+        yield return new WaitForSeconds(20);
         bulletsLeft = magazineSize;
         reloading = false;
-	}
+    }
 }
