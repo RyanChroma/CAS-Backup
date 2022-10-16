@@ -161,10 +161,10 @@ MonoBehaviour:
   model: {fileID: 338423552659899927}
   looker: {fileID: 608896053503497403}
   shotCooldown: 0.2
-  damage: 5
+  damage: 1
   shotForce: 300
   rotateSpeed: 0
-  distanceLimit: 237.01
+  distanceLimit: 500
 --- !u!1001 &608896055209524038
 PrefabInstance:
   m_ObjectHideFlags: 0
