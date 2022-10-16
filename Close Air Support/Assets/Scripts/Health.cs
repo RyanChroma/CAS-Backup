@@ -14,6 +14,12 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             onDeath.Invoke();
+      
         }
+    }
+
+    public void UnlockMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }

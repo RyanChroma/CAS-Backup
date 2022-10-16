@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlaneGunSound : MonoBehaviour
 {
     public AudioSource playerGunSound;
+    public PlaneGun planeGun;
     
     void Start()
     {
@@ -13,6 +14,12 @@ public class PlaneGunSound : MonoBehaviour
 
     void Update()
     {
+        if (planeGun.reloading)
+        {
+            playerGunSound.enabled = false;
+            return;
+        }
+
         if(Input.GetKey(KeyCode.Mouse0))
 		{
             playerGunSound.enabled = true;

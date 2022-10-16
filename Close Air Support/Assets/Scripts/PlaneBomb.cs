@@ -23,14 +23,36 @@ public class PlaneBomb : MonoBehaviour
     public float jerichoVolumeStart = 0.0f;
     public float jerichoVolumeEnd = 0.0f;
 
+    [SerializeField] public int bombAmmo;
+    [SerializeField] public int maxBombAmmo;
+    [SerializeField] public float reloadTime;
+    private float _reloadTime;
+    public bool isReloading;
+
     public void Start()
     {
+        _reloadTime = reloadTime;
         jerichoTrumpet.enabled = false;
         jerichoTrumpet.volume = 0;
     }
 
     public void Update()
     {
+        if (isReloading)
+        {
+            reloadTime -= Time.deltaTime;
+        }
+
+        if (bombAmmo <= 0 && ! isReloading)
+        {
+            StartCoroutine(ReloadWithCooldown());
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && bombAmmo < maxBombAmmo && !isReloading)
+        {
+            StartCoroutine(ReloadWithCooldown());
+        }
+
         //planeAngle = Mathf.Clamp(planeAngle, 40, 100); (THIS DOES NOT WORK)
 
         if (planeBody.transform.rotation.eulerAngles.x >= 40 && planeBody.transform.rotation.eulerAngles.x <= 100)
@@ -55,12 +77,14 @@ public class PlaneBomb : MonoBehaviour
 
         if(planeRotation == true)
         {
+            if (bombAmmo <= 0) return;
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 bombLoad.SetActive(false);
                 GameObject currentBomb = Instantiate(bombPrefab, bombLoad.transform.position, bombLoad.transform.rotation);
                 currentBomb.GetComponent<Rigidbody>().velocity = currentBomb.transform.forward * (planePilot.speed + 50);
 
+                bombAmmo -= 1;
                 /*if(planePilot.speed > 100)
                 {
                     currentBomb.GetComponent<Rigidbody>().velocity = currentBomb.transform.forward * (planePilot.speed - 100);
@@ -71,5 +95,14 @@ public class PlaneBomb : MonoBehaviour
                 }*/
             }
         }
+    }
+
+    public IEnumerator ReloadWithCooldown()
+    {
+        isReloading = true;
+        yield return new WaitForSeconds(_reloadTime);
+        bombAmmo = maxBombAmmo;
+        reloadTime = _reloadTime;
+        isReloading = false;
     }
 }

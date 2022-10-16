@@ -15,7 +15,6 @@ public class PlanePilot : MonoBehaviour
 	{
 		//DISABLE MOUSE AND MAKE IT INVISIBLE
 		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 
 		//moveCamTo.enabled = true;
 		//freeCamera.enabled = false;

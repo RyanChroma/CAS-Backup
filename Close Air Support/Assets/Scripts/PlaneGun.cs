@@ -12,14 +12,14 @@ public class PlaneGun : MonoBehaviour
     public float shootForce, upwardForce;
 
     //GUN STATS
-    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
+    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots, _reloadTime;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
     public int bulletsLeft, bulletsShot;
 
     //BOOLS
-    bool shooting, readyToShoot, reloading;
+     public bool shooting, readyToShoot, reloading;
 
     //REFERENCE
     public Camera fpsCam;
@@ -28,6 +28,8 @@ public class PlaneGun : MonoBehaviour
     //GRAPHICS
     public GameObject muzzleFlash;
     public TextMeshProUGUI ammunitionDisplay;
+
+    public bool dead;
 
     //BUG FIXING
     public bool allowInvoke = true;
@@ -38,8 +40,14 @@ public class PlaneGun : MonoBehaviour
         bulletsLeft = magazineSize;
         readyToShoot = true;
     }
+
+    private void Start()
+    {
+        _reloadTime = reloadTime;
+    }
     public void Update()
     {
+        if (dead) return;
         MyInput();
 
         //SET AMMO DISPLAY, IF IT EXISTS
@@ -47,6 +55,11 @@ public class PlaneGun : MonoBehaviour
 		{
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
 		}
+
+        if (reloading)
+        {
+            reloadTime -= Time.deltaTime;
+        }
     }
 
     public void MyInput()
@@ -164,8 +177,14 @@ public class PlaneGun : MonoBehaviour
     public IEnumerator ReloadWithCooldown()
     {
         reloading = true;
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(_reloadTime);
         bulletsLeft = magazineSize;
+        reloadTime = _reloadTime;
         reloading = false;
+    }
+
+    public void setDead()
+    {
+        dead = true;
     }
 }
