@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float distanceLimit;
     private GameObject player => GameObject.FindGameObjectWithTag("Player");
+
+    public static Action onDeath;
 
     private void Start()
     {
@@ -49,6 +52,11 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, distanceLimit);
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position,( player.transform.position - transform.position).normalized * distanceLimit);
+    }
+
+    public  void DeathNoti()
+    {
+        onDeath.Invoke();
     }
 
 }

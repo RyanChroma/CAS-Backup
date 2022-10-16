@@ -14,7 +14,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.transform.name);
         if(other.TryGetComponent(out Health health))
         {
             health.ReduceHealth(damage);

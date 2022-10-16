@@ -127,3 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombCollider: {fileID: 6947795403714034911}
   bombExplosionEffect: {fileID: 4068689898363373985, guid: b2cb10d3bcea1e041abe53c2155e9d57, type: 3}
+  radius: 32.16
+  damage: 50
