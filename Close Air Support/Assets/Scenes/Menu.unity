@@ -1762,7 +1762,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &18382949
 MonoBehaviour:
@@ -20700,8 +20700,8 @@ MonoBehaviour:
     game is for educational purposes. I do not make any profit from this game.\n\nVIDEO
     FOOTAGE:\nLEVEL 1939: https://www.youtube.com/watch?v=nC9Lmr5mjJQ\n\nSOUND EFFECTS\nJU87
     engine sound from War Thunder\r\nJU87 gun sound from YouTube - Free download)
-    MG34 gun sound effect)\r\nBomb from YouTube - sound effects explosion\n\n\nIMPORTED
-    MODELS FROM sketchfab.com:\nStuka: https://sketchfab.com/3d-models/junkers-ju-87-stuka-80fe9909938a44159d1906a81092c006\r\nAA
+    MG34 gun sound effect)\r\nBomb from YouTube - sound effects explosion\n\nSpecial
+    textures from textures.com\n\nIMPORTED MODELS FROM sketchfab.com:\nStuka: https://sketchfab.com/3d-models/junkers-ju-87-stuka-80fe9909938a44159d1906a81092c006\r\nAA
     gun: https://sketchfab.com/3d-models/2cm-flakvierling-4x20mm-aa-gun-5f105645388d43e489b3409467d82400 "
 --- !u!222 &340215411
 CanvasRenderer:
@@ -20788,14 +20788,17 @@ MonoBehaviour:
     LEFT CONTROL TO DECREASE
     SPEED
 
+    Q AND E TO TURN LEFT AND RIGHT WITHOUT TILTING
 
-    HOLD C AND MOVE MOUSE TO LOOK AROUND
+
+    HOLD C AND MOVE
+    MOUSE TO LOOK AROUND
 
 
-    LEFT CLICK TO SHOOT MACHINE
-    GUNS
+    LEFT CLICK TO SHOOT MACHINE GUNS
 
-    SPACE TO DROP BOMB (PLANE MUST BE FACING DOWN)'
+    SPACE TO DROP
+    BOMB (PLANE MUST BE FACING DOWN)'
 --- !u!222 &342831649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49839,7 +49842,7 @@ RectTransform:
   - {fileID: 208646750}
   - {fileID: 1614739574}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
