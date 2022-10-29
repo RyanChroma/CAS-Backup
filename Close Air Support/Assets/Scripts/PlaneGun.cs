@@ -5,6 +5,8 @@ using TMPro;
 
 public class PlaneGun : MonoBehaviour
 {
+    [SerializeField] private AutoAimer autoAimer;
+
     //BULLET
     public GameObject bullet;
 
@@ -137,7 +139,16 @@ public class PlaneGun : MonoBehaviour
 
         //ADD FORCES TO BULLET
         //currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
-        currentBullet.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * shootForce, ForceMode.Impulse);
+
+        if(autoAimer.ReturnClosetTarget() != null)
+        {
+            currentBullet.GetComponent<Rigidbody>().AddForce((autoAimer.ReturnClosetTarget().transform.position - attackPoint.transform.position).normalized * shootForce, ForceMode.Impulse);
+        }
+        else
+        {
+            currentBullet.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * shootForce, ForceMode.Impulse);
+        }
+       
 
         //INSTANTIATE MUZZLE FLASH, IF YOU HAVE ONE
         if(muzzleFlash != null)
