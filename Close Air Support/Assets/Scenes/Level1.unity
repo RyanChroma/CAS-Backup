@@ -1230,6 +1230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inSightObject: []
+  closetTarget: {fileID: 0}
+  aimRadius: 1
 --- !u!1001 &68584816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068c0a108fb797446baaffb396ee6fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoAimer: {fileID: 58482144}
   bullet: {fileID: 1256626617827617918, guid: 81b6a4b440aaf31479dd8618991eff23, type: 3}
   shootForce: 500
   upwardForce: 0
@@ -12095,6 +12098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068c0a108fb797446baaffb396ee6fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoAimer: {fileID: 58482144}
   bullet: {fileID: 1256626617827617918, guid: 81b6a4b440aaf31479dd8618991eff23, type: 3}
   shootForce: 500
   upwardForce: 0
@@ -37373,8 +37377,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6605561218275800214}
-  m_LocalRotation: {x: -0.18994695, y: -0, z: -0, w: 0.98179436}
-  m_LocalPosition: {x: 104.9, y: 707.87964, z: -648.2134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.9, y: 706.2987, z: -651.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1106151832}
@@ -37384,7 +37388,7 @@ Transform:
   - {fileID: 1006116070}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -21.899, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6032878476014870789
 Transform:
   m_ObjectHideFlags: 0
