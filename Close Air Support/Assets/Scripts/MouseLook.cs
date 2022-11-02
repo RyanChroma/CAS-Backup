@@ -7,6 +7,7 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform camPivot;
     public Transform cam;
+    public Transform cam2;
     public float zoomDepth = 0.0f;
     public Vector3 camPos;
     public Quaternion defaultPivot;
@@ -25,6 +26,9 @@ public class MouseLook : MonoBehaviour
 		float bias = 0.96f;
 		Camera.main.transform.position = Camera.main.transform.position * bias + mainCameraController * (1.0f - bias);
 		Camera.main.transform.LookAt(transform.position + transform.forward * 30.0f);
+
+        cam2.transform.position = cam2.transform.position * bias + mainCameraController * (1.0f - bias);
+        cam2.transform.LookAt(transform.position + transform.forward * 30.0f);
 
         if (Input.GetKey(KeyCode.C))
         {

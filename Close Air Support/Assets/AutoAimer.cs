@@ -7,12 +7,12 @@ using UnityEngine.SocialPlatforms;
 
 public class AutoAimer : MonoBehaviour
 {
-    public List<GameObject> inSightObject = new List<GameObject>();
-    [SerializeField] private GameObject closetTarget;
+     List<GameObject> inSightObject = new List<GameObject>();
+     private GameObject closetTarget;
     private Camera cam => Camera.main;
 
     [Range(0f,1f)]
-    [SerializeField] private float aimRadius;
+    public float aimRadius;
     
     public void AddToList(GameObject _object)
     {
