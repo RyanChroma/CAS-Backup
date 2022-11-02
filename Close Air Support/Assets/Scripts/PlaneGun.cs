@@ -142,10 +142,12 @@ public class PlaneGun : MonoBehaviour
 
         if(autoAimer.ReturnClosetTarget() != null)
         {
+            Debug.Log("Auto aim NOT null");
             currentBullet.GetComponent<Rigidbody>().AddForce((autoAimer.ReturnClosetTarget().transform.position - attackPoint.transform.position).normalized * shootForce, ForceMode.Impulse);
         }
         else
         {
+            Debug.Log("Auto aim IS null");
             currentBullet.GetComponent<Rigidbody>().AddForce(attackPoint.transform.forward * shootForce, ForceMode.Impulse);
         }
        
