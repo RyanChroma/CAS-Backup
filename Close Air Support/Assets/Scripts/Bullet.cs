@@ -16,6 +16,8 @@ public class Bullet : MonoBehaviour
     {
         if(other.TryGetComponent(out Health health))
         {
+            if (health.bombOnly) return;
+
             health.ReduceHealth(damage);
         }
             

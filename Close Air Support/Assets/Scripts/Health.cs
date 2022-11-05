@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private UnityEvent onDeath;
+    public bool bombOnly = false;
     public void ReduceHealth(float _health)
     {
         health -= _health;
@@ -14,7 +15,6 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             onDeath.Invoke();
-      
         }
     }
 
