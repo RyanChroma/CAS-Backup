@@ -20702,7 +20702,10 @@ MonoBehaviour:
     engine sound from War Thunder\r\nJU87 gun sound from YouTube - Free download)
     MG34 gun sound effect)\r\nBomb from YouTube - sound effects explosion\n\nSpecial
     textures from textures.com\n\nIMPORTED MODELS FROM sketchfab.com:\nStuka: https://sketchfab.com/3d-models/junkers-ju-87-stuka-80fe9909938a44159d1906a81092c006\r\nAA
-    gun: https://sketchfab.com/3d-models/2cm-flakvierling-4x20mm-aa-gun-5f105645388d43e489b3409467d82400 "
+    gun: https://sketchfab.com/3d-models/2cm-flakvierling-4x20mm-aa-gun-5f105645388d43e489b3409467d82400\r\nUS
+    Battleship Louisiana: https://sketchfab.com/3d-models/us-battleship-louisiana-d3087bb4f55848b4b0eb987f59357bba\r\nHalf
+    Life 2 inspired Boat: https://sketchfab.com/3d-models/half-life-2-inspired-boat-d1bec7606e604e1bb3e0b00e7b303162
+    \r\n"
 --- !u!222 &340215411
 CanvasRenderer:
   m_ObjectHideFlags: 0
